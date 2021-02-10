@@ -1,1 +1,7 @@
-literate-git-private.code-workspace
+/__pycache__/
+/cache/*
+!/cache/.gitkeep
+/output/*
+!/output/.gitkeep
+literate-git-command.code-workspace
+

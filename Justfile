@@ -1,3 +1,5 @@
+#!/usr/bin/env just --justfile
+
 repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`
 
 repository-local-path:

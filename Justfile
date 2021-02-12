@@ -4,6 +4,7 @@ repository-local-path := `while r=$(ghq list --full-path "${repository_remote}")
 literate-git-branch-prefix := 'literate-git-'
 literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'
 literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`
+linear-branch := literate-git-linear-branch
 
 repository-local-path:
     echo "${repository_remote}"

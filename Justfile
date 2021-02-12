@@ -1,6 +1,9 @@
 #!/usr/bin/env just --justfile
 
 repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`
+literate-git-branch-prefix := 'literate-git-'
+literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'
+literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`
 
 repository-local-path:
     echo "${repository_remote}"

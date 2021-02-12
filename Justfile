@@ -105,6 +105,8 @@ literate-render: cache
         unlink ./example_create_url.py
     cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"
 
+all: regenerate-linear-branch dendrify literate-render
+
 file-server:
     echo "{{ repository-local-path }}"
     echo "${output_path}"
@@ -126,3 +128,5 @@ github-pages:
     git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" push --force --set-upstream origin gh-pages
     git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout master
 
+push-tags:
+    git push --tags

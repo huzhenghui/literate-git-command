@@ -50,3 +50,25 @@ regenerate-linear-branch:
                 git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${current_branch}" ; \
             fi \
         done
+
+dendrify:
+    echo "{{ repository-local-path }}"
+    echo "{{ pyenv-version-name }}"
+    echo "${base_branch}"
+    echo "{{ linear-branch }}"
+    echo "{{ literate-git-tree-branch }}"
+    if [[ -n "${base_branch}" && -n "{{ linear-branch }}" && -n "{{ literate-git-tree-branch }}" ]]; then \
+        if git --git-dir "{{ repository-local-path }}/.git" show-branch "{{ literate-git-tree-branch }}" ; then \
+            git --git-dir "{{ repository-local-path }}/.git" branch --delete --force "{{ literate-git-tree-branch }}" ; \
+        fi && \
+        cd "{{ repository-local-path }}" && \
+            python_version_original="$(pyenv local)" && \
+            pyenv local "{{ pyenv-version-name }}" && \
+            git dendrify dendrify "{{ literate-git-tree-branch }}" "${base_branch}" "{{ linear-branch }}" && \
+            if [[ -n "${python_version_original}" ]]; then \
+                pyenv local "${python_version_original}" ; \
+            else \
+                pyenv local --unset ; \
+            fi \
+    fi
+

@@ -5,6 +5,8 @@ literate-git-branch-prefix := 'literate-git-'
 literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'
 literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`
 linear-branch := literate-git-linear-branch
+literate-git-tree-branch-prefix := literate-git-branch-prefix + 'tree-'
+literate-git-tree-branch := literate-git-tree-branch-prefix + `echo "${tree_branch_postfix}"`
 
 repository-local-path:
     echo "${repository_remote}"

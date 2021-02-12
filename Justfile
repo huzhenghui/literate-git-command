@@ -109,3 +109,20 @@ file-server:
     echo "{{ repository-local-path }}"
     echo "${output_path}"
     caddy file-server --root "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"
+
+github-pages:
+    echo "{{ repository-local-path }}"
+    echo "${output_path}"
+    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout master
+    if git --git-dir "{{ repository-local-path }}/.git" show-branch gh-pages ; then \
+        git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" branch --delete --force gh-pages ; \
+    fi
+    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout --orphan gh-pages
+    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" rm -rf .
+    cd "{{ repository-local-path }}" && \
+        cd "${output_path}" && \
+        find . -type f -exec mv {} ../ \; -exec git add ../{} \;
+    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" commit --message "GitHub Pages"
+    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" push --force --set-upstream origin gh-pages
+    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout master
+

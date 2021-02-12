@@ -105,3 +105,7 @@ literate-render: cache
         unlink ./example_create_url.py
     cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"
 
+file-server:
+    echo "{{ repository-local-path }}"
+    echo "${output_path}"
+    caddy file-server --root "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"

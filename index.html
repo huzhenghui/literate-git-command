@@ -1,0 +1,4769 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta charset="utf-8"/>
+    <title>literate-git-command for literate-git-command</title>
+    <link rel="stylesheet" type="text/css" media="all" href="./github-markdown.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="./literate-git.css"/>
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2.0.4"></script>
+    <script src="literate-git.js"></script>
+    <style>.patch .hll { background-color: #ffffcc }
+.patch  { background: #f8f8f8; }
+.patch .c { color: #408080; font-style: italic } /* Comment */
+.patch .err { border: 1px solid #FF0000 } /* Error */
+.patch .k { color: #008000; font-weight: bold } /* Keyword */
+.patch .o { color: #666666 } /* Operator */
+.patch .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.patch .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.patch .cp { color: #BC7A00 } /* Comment.Preproc */
+.patch .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.patch .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.patch .cs { color: #408080; font-style: italic } /* Comment.Special */
+.patch .gd { color: #A00000 } /* Generic.Deleted */
+.patch .ge { font-style: italic } /* Generic.Emph */
+.patch .gr { color: #FF0000 } /* Generic.Error */
+.patch .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.patch .gi { color: #00A000 } /* Generic.Inserted */
+.patch .go { color: #888888 } /* Generic.Output */
+.patch .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.patch .gs { font-weight: bold } /* Generic.Strong */
+.patch .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.patch .gt { color: #0044DD } /* Generic.Traceback */
+.patch .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.patch .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.patch .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.patch .kp { color: #008000 } /* Keyword.Pseudo */
+.patch .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.patch .kt { color: #B00040 } /* Keyword.Type */
+.patch .m { color: #666666 } /* Literal.Number */
+.patch .s { color: #BA2121 } /* Literal.String */
+.patch .na { color: #7D9029 } /* Name.Attribute */
+.patch .nb { color: #008000 } /* Name.Builtin */
+.patch .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.patch .no { color: #880000 } /* Name.Constant */
+.patch .nd { color: #AA22FF } /* Name.Decorator */
+.patch .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.patch .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.patch .nf { color: #0000FF } /* Name.Function */
+.patch .nl { color: #A0A000 } /* Name.Label */
+.patch .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.patch .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.patch .nv { color: #19177C } /* Name.Variable */
+.patch .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.patch .w { color: #bbbbbb } /* Text.Whitespace */
+.patch .mb { color: #666666 } /* Literal.Number.Bin */
+.patch .mf { color: #666666 } /* Literal.Number.Float */
+.patch .mh { color: #666666 } /* Literal.Number.Hex */
+.patch .mi { color: #666666 } /* Literal.Number.Integer */
+.patch .mo { color: #666666 } /* Literal.Number.Oct */
+.patch .sa { color: #BA2121 } /* Literal.String.Affix */
+.patch .sb { color: #BA2121 } /* Literal.String.Backtick */
+.patch .sc { color: #BA2121 } /* Literal.String.Char */
+.patch .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.patch .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.patch .s2 { color: #BA2121 } /* Literal.String.Double */
+.patch .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.patch .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.patch .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.patch .sx { color: #008000 } /* Literal.String.Other */
+.patch .sr { color: #BB6688 } /* Literal.String.Regex */
+.patch .s1 { color: #BA2121 } /* Literal.String.Single */
+.patch .ss { color: #19177C } /* Literal.String.Symbol */
+.patch .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.patch .fm { color: #0000FF } /* Name.Function.Magic */
+.patch .vc { color: #19177C } /* Name.Variable.Class */
+.patch .vg { color: #19177C } /* Name.Variable.Global */
+.patch .vi { color: #19177C } /* Name.Variable.Instance */
+.patch .vm { color: #19177C } /* Name.Variable.Magic */
+.patch .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+  </head>
+
+  <body>
+  <div class="content markdown-body"><h1>literate-git-command for literate-git-command</h1>
+
+<div class="literate-git-node" data-commit-sha1="22f5c664b3eed0436954db10609e273c94038fbb">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">1</span>
+    rename code-workspace</h2>
+
+<div class="message-body"><h1>rename code-workspace</h1>
+
+<blockquote>
+  <p>Fix the legacy code.</p>
+</blockquote>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/22f5c664b3eed0436954db10609e273c94038fbb"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/22f5c664b3eed0436954db10609e273c94038fbb"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.gitignore</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-del">
+    <td>1</td>
+    <td></td>
+    <td><pre>literate-git-private.code-workspace</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>literate-git-command.code-workspace</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="560de8e0833209e71cf6e7bdbaf52041f66527b1">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">2</span>
+    add .env and Justfile</h2>
+
+<div class="message-body"><h1>add .env and Justfile</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/560de8e0833209e71cf6e7bdbaf52041f66527b1"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/560de8e0833209e71cf6e7bdbaf52041f66527b1"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<h2 class="nav expand">+</h2>
+<h2 class="nav collapse">-</h2>
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.envrc</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>dotenv</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.gitignore</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>/cache/*</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre>!/cache/.gitkeep</pre></td></tr>
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>3</td>
+    <td><pre>literate-git-command.code-workspace</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>cache/.gitkeep</h4>
+  
+  </div>
+  </div>
+
+
+<div class="children">
+<div class="literate-git-node" data-commit-sha1="3a7c5203adcd292883eac26785abfcabe0e6ed28">
+
+<h2><span class="sec-num">2.1</span>
+    add .envrc</h2>
+
+<div class="message-body"><h1>Add /.envrc</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/3a7c5203adcd292883eac26785abfcabe0e6ed28"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/3a7c5203adcd292883eac26785abfcabe0e6ed28"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.envrc</h4>
+  
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.gitignore</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>/cache/*</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre>!/cache/.gitkeep</pre></td></tr>
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>3</td>
+    <td><pre>literate-git-command.code-workspace</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="1ff2512a112d7fad90250ce1f3831b4707f46fcc">
+
+<h2><span class="sec-num">2.2</span>
+    add .env file</h2>
+
+<div class="message-body"><h1>add .env file</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/1ff2512a112d7fad90250ce1f3831b4707f46fcc"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/1ff2512a112d7fad90250ce1f3831b4707f46fcc"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>cache/.gitkeep</h4>
+  
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="f4dfad5bab62d9f325e8c7db4640a69c60b2fc8f">
+
+<h2><span class="sec-num">2.3</span>
+    Enable .env</h2>
+
+<div class="message-body"><h1>Enable .env</h1>
+
+<p>add <code>dotenv</code> in .envrc</p>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/f4dfad5bab62d9f325e8c7db4640a69c60b2fc8f"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/f4dfad5bab62d9f325e8c7db4640a69c60b2fc8f"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.envrc</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>dotenv</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="976213398b60ed94f21d3255197d68869f03c08d">
+
+<h2><span class="sec-num">2.4</span>
+    Add repository_remote</h2>
+
+<div class="message-body"><h1>Add <code>repository_remote</code> environment variable in <code>.env</code> file</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/976213398b60ed94f21d3255197d68869f03c08d"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/976213398b60ed94f21d3255197d68869f03c08d"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="1f1a1191983f4be4cdb09ae5926ad1e6ec476840">
+
+<h2><span class="sec-num">2.5</span>
+    add Justfile</h2>
+
+<div class="message-body"><h1>add Justfile</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/1f1a1191983f4be4cdb09ae5926ad1e6ec476840"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/1f1a1191983f4be4cdb09ae5926ad1e6ec476840"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="1695324c4f26759ac55123670587bfaca2b69b24">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">3</span>
+    add Shebang</h2>
+
+<div class="message-body"><h1>add Shebang</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/1695324c4f26759ac55123670587bfaca2b69b24"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/1695324c4f26759ac55123670587bfaca2b69b24"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>#!/usr/bin/env just --justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>3</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>5</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="750d7740afacfd0367805146c4331b459cc05f44">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">4</span>
+    add commit-message</h2>
+
+<div class="message-body"><h1>add commit-message</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/750d7740afacfd0367805146c4331b459cc05f44"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/750d7740afacfd0367805146c4331b459cc05f44"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<h2 class="nav expand">+</h2>
+<h2 class="nav collapse">-</h2>
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/1/rename.code-workspace.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>rename code-workspace</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> rename code-workspace</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre><span class="k">&gt; </span><span class="ge">Fix the legacy code.</span></pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/10/add.file-server.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add file-server</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `file-server` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/11/add.github-pages.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add github-pages</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `github-pages` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/12/add.frequently.recipes.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add frequently recipes</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add frequently recipes in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/12/master.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add all files in master</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add all files in master</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.1/add.cache.gitkeep.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add cache/.gitkeep</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache/.gitkeep</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.2/add.cache.gitignore.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add cache /.gitignore</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache /.gitignore</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.3/add.cache.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add cache</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.1/add.envrc.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add .envrc</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add /.envrc</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.2/add.env.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add .env file</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add .env file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.3/enable.env.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Enable .env</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Enable .env</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>add <span class="sb">`dotenv`</span> in .envrc</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.4/add.repository_remote.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add repository_remote</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `repository_remote` environment variable in `.env` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.5/add.Justfile.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add Justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add Justfile</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.6/add.env.and.Justfile.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add .env and Justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add .env and Justfile</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/4/add.Shebang.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add Shebang</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add Shebang</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.1/add.commit_message_path.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add commit_message_path</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `commit_message_path` environment variable in `.env` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.2/add.commit-message.files.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add commit-message files</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `commit-message` files</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.3/add.commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add commit-message</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5/add.commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add commit-message</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.1/add.show-commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add show-commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `show-commit-message`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6/master.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add all files in master</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add all files in master</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7/add.regenerate-linear-branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`regenerate-linear-branch`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `regenerate-linear-branch` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.1/add.python-version.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;Add .python-version</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `.python-version` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.2/add.dendrify.recipe.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add dendrify recipe</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `dendrify` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.3/add.dendrify.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;Add dendrify</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add.`dendrify` recipe</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/9/add.literate-render.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add literate-render</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `literate-render` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+<div class="children">
+<div class="literate-git-node" data-commit-sha1="4e1a8f4f6a36e33d17e5d92f3ef79b3e31d58726">
+
+<h2><span class="sec-num">4.1</span>
+    add <code>commit_message_path</code></h2>
+
+<div class="message-body"><h1>add <code>commit_message_path</code> environment variable in <code>.env</code> file</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/4e1a8f4f6a36e33d17e5d92f3ef79b3e31d58726"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/4e1a8f4f6a36e33d17e5d92f3ef79b3e31d58726"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="bc2bc20bc0fd26d7660bb2f5a07a061e5ac7f4c2">
+
+<h2><span class="sec-num">4.2</span>
+    add commit-message files</h2>
+
+<div class="message-body"><h1>add <code>commit-message</code> files</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/bc2bc20bc0fd26d7660bb2f5a07a061e5ac7f4c2"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/bc2bc20bc0fd26d7660bb2f5a07a061e5ac7f4c2"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/1/rename.code-workspace.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>rename code-workspace</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> rename code-workspace</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre><span class="k">&gt; </span><span class="ge">Fix the legacy code.</span></pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/10/add.file-server.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add file-server</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `file-server` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/11/add.github-pages.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add github-pages</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `github-pages` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/12/add.frequently.recipes.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add frequently recipes</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add frequently recipes in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/12/master.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add all files in master</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add all files in master</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.1/add.cache.gitkeep.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add cache/.gitkeep</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache/.gitkeep</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.2/add.cache.gitignore.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add cache /.gitignore</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache /.gitignore</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.3/add.cache.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add cache</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.1/add.envrc.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add .envrc</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add /.envrc</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.2/add.env.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add .env file</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add .env file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.3/enable.env.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Enable .env</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Enable .env</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>add <span class="sb">`dotenv`</span> in .envrc</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.4/add.repository_remote.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add repository_remote</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `repository_remote` environment variable in `.env` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.5/add.Justfile.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add Justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add Justfile</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3.6/add.env.and.Justfile.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add .env and Justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add .env and Justfile</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/4/add.Shebang.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add Shebang</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add Shebang</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.1/add.commit_message_path.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add commit_message_path</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `commit_message_path` environment variable in `.env` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.2/add.commit-message.files.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add commit-message files</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `commit-message` files</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.3/add.commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add commit-message</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5/add.commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add commit-message</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.1/add.show-commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add show-commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `show-commit-message`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6/master.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add all files in master</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add all files in master</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7/add.regenerate-linear-branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`regenerate-linear-branch`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `regenerate-linear-branch` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.1/add.python-version.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;Add .python-version</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `.python-version` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.2/add.dendrify.recipe.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add dendrify recipe</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `dendrify` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.3/add.dendrify.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;Add dendrify</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add.`dendrify` recipe</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/9/add.literate-render.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add literate-render</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `literate-render` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="a2c0bfac8924cbec0173e99e6ac04a63349b678e">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">5</span>
+    Add show-commit-message</h2>
+
+<div class="message-body"><h1>add <code>show-commit-message</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/a2c0bfac8924cbec0173e99e6ac04a63349b678e"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/a2c0bfac8924cbec0173e99e6ac04a63349b678e"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>5</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>6</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>7</td>
+    <td>7</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>8</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>9</td>
+    <td><pre>show-commit-message:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>10</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>11</td>
+    <td><pre>    echo "${commit_message_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>12</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>13</td>
+    <td><pre>        cd "${commit_message_path}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>14</td>
+    <td><pre>        pwd && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>15</td>
+    <td><pre>        find . -type f | sort --numeric-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>16</td>
+    <td><pre>            echo "${line}" | pastel paint --bold red --no-newline && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>17</td>
+    <td><pre>            branch_name="$(echo "${line}" | sed 's/^\.[/][^/]*[/]\(.*\)\.[^.]*$/\1/')" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>18</td>
+    <td><pre>            echo "${branch_name}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>19</td>
+    <td><pre>            if git --git-dir "{{ repository-local-path }}/.git" show-branch --sha1-name "${branch_name}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>20</td>
+    <td><pre>                commit_content="$(cat "${line}")" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>21</td>
+    <td><pre>                echo "${commit_content}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>22</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>23</td>
+    <td><pre>        done</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="56f8f0e6ab5a10574d83aa1bc9af65220280da4b">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">6</span>
+    Add <code>regenerate-linear-branch</code></h2>
+
+<div class="message-body"><h1>Add <code>regenerate-linear-branch</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/56f8f0e6ab5a10574d83aa1bc9af65220280da4b"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/56f8f0e6ab5a10574d83aa1bc9af65220280da4b"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<h2 class="nav expand">+</h2>
+<h2 class="nav collapse">-</h2>
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre>base_branch=start</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>linear_branch_postfix=linear_branch</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>#!/usr/bin/env just --justfile</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>literate-git-branch-prefix := 'literate-git-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>6</td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>7</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>8</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>9</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>21</td>
+    <td>24</td>
+    <td><pre>                echo "${commit_content}" ; \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>22</td>
+    <td>25</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>23</td>
+    <td>26</td>
+    <td><pre>        done</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>27</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>28</td>
+    <td><pre>regenerate-linear-branch:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>29</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>30</td>
+    <td><pre>    echo "${base_branch}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>31</td>
+    <td><pre>    echo "{{ literate-git-linear-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>32</td>
+    <td><pre>    echo "${commit_message_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>33</td>
+    <td><pre>    if git --git-dir "{{ repository-local-path }}/.git" show-branch "{{ literate-git-linear-branch }}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>34</td>
+    <td><pre>        git --git-dir "{{ repository-local-path }}/.git" branch --delete --force "{{ literate-git-linear-branch }}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>35</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>36</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" branch --copy "${base_branch}" "{{ literate-git-linear-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>37</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>38</td>
+    <td><pre>        cd "${commit_message_path}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>39</td>
+    <td><pre>        pwd && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>40</td>
+    <td><pre>        find . -type f | sort --numeric-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>41</td>
+    <td><pre>            echo "${line}" | pastel paint --bold red --no-newline && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>42</td>
+    <td><pre>            branch_name="$(echo "${line}" | sed 's/^\.[/][^/]*[/]\(.*\)\.[^.]*$/\1/')" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>43</td>
+    <td><pre>            echo "${branch_name}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>44</td>
+    <td><pre>            if git --git-dir "{{ repository-local-path }}/.git" show-branch --sha1-name "${branch_name}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>45</td>
+    <td><pre>                cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>46</td>
+    <td><pre>                commit_content="$(cd "${commit_message_path}"; cat "${line}")" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>47</td>
+    <td><pre>                echo "${commit_content}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>48</td>
+    <td><pre>                current_branch="$(git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" branch --show-current)" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>49</td>
+    <td><pre>                echo "${current_branch}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>50</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "{{ literate-git-linear-branch }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>51</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" merge --squash --strategy-option=theirs "${branch_name}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>52</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" commit --allow-empty -m "${commit_content}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>53</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${current_branch}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>54</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>55</td>
+    <td><pre>        done</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+<div class="children">
+<div class="literate-git-node" data-commit-sha1="fa65426b002134493f948d2a5a592b7ea27683fd">
+
+<h2><span class="sec-num">6.1</span>
+    Add base_branch</h2>
+
+<div class="message-body"><h1>Add <code>base_branch</code> environment variable</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/fa65426b002134493f948d2a5a592b7ea27683fd"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/fa65426b002134493f948d2a5a592b7ea27683fd"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre>base_branch=start</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="693ec08d0e4a7bd08a877771dee2715b177ff508">
+
+<h2><span class="sec-num">6.2</span>
+    Add <code>linear_branch_postfix</code></h2>
+
+<div class="message-body"><h1>Add <code>linear_branch_postfix</code> environment variable</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/693ec08d0e4a7bd08a877771dee2715b177ff508"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/693ec08d0e4a7bd08a877771dee2715b177ff508"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>repository_remote=https://github.com/huzhenghui/literate-git-command/</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>base_branch=start</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>linear_branch_postfix=linear_branch</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="e38680648b88d6d0abdaf39eef64e72f7abffb2e">
+
+<h2><span class="sec-num">6.3</span>
+    Add <code>literate-git-linear-branch</code></h2>
+
+<div class="message-body"><h1>Add <code>literate-git-linear-branch</code> variable in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/e38680648b88d6d0abdaf39eef64e72f7abffb2e"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/e38680648b88d6d0abdaf39eef64e72f7abffb2e"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>#!/usr/bin/env just --justfile</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>literate-git-branch-prefix := 'literate-git-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>6</td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>7</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>8</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>9</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="360a2d9ea9f529268e750049dbb9a32175e20d8d">
+
+<h2><span class="sec-num">6.4</span>
+    Add <code>regenerate-linear-branch</code> recipe</h2>
+
+<div class="message-body"><h1>Add <code>regenerate-linear-branch</code> recipe in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/360a2d9ea9f529268e750049dbb9a32175e20d8d"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/360a2d9ea9f529268e750049dbb9a32175e20d8d"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>24</td>
+    <td>24</td>
+    <td><pre>                echo "${commit_content}" ; \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>25</td>
+    <td>25</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>26</td>
+    <td>26</td>
+    <td><pre>        done</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>27</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>28</td>
+    <td><pre>regenerate-linear-branch:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>29</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>30</td>
+    <td><pre>    echo "${base_branch}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>31</td>
+    <td><pre>    echo "{{ literate-git-linear-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>32</td>
+    <td><pre>    echo "${commit_message_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>33</td>
+    <td><pre>    if git --git-dir "{{ repository-local-path }}/.git" show-branch "{{ literate-git-linear-branch }}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>34</td>
+    <td><pre>        git --git-dir "{{ repository-local-path }}/.git" branch --delete --force "{{ literate-git-linear-branch }}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>35</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>36</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" branch --copy "${base_branch}" "{{ literate-git-linear-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>37</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>38</td>
+    <td><pre>        cd "${commit_message_path}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>39</td>
+    <td><pre>        pwd && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>40</td>
+    <td><pre>        find . -type f | sort --numeric-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>41</td>
+    <td><pre>            echo "${line}" | pastel paint --bold red --no-newline && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>42</td>
+    <td><pre>            branch_name="$(echo "${line}" | sed 's/^\.[/][^/]*[/]\(.*\)\.[^.]*$/\1/')" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>43</td>
+    <td><pre>            echo "${branch_name}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>44</td>
+    <td><pre>            if git --git-dir "{{ repository-local-path }}/.git" show-branch --sha1-name "${branch_name}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>45</td>
+    <td><pre>                cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>46</td>
+    <td><pre>                commit_content="$(cd "${commit_message_path}"; cat "${line}")" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>47</td>
+    <td><pre>                echo "${commit_content}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>48</td>
+    <td><pre>                current_branch="$(git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" branch --show-current)" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>49</td>
+    <td><pre>                echo "${current_branch}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>50</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "{{ literate-git-linear-branch }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>51</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" merge --squash --strategy-option=theirs "${branch_name}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>52</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" commit --allow-empty -m "${commit_content}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>53</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${current_branch}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>54</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>55</td>
+    <td><pre>        done</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="193e736cd5dfaae2f019033204f834455283a8fc">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">7</span>
+    Add dendrify</h2>
+
+<div class="message-body"><h1>Add.<code>dendrify</code> recipe</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/193e736cd5dfaae2f019033204f834455283a8fc"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/193e736cd5dfaae2f019033204f834455283a8fc"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<h2 class="nav expand">+</h2>
+<h2 class="nav collapse">-</h2>
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>base_branch=start</pre></td></tr>
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>4</td>
+    <td><pre>linear_branch_postfix=linear_branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>tree_branch_postfix=tree_branch</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.python-version</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>3.9.1</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>4</td>
+    <td><pre>literate-git-branch-prefix := 'literate-git-'</pre></td></tr>
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>5</td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>6</td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre>linear-branch := literate-git-linear-branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>8</td>
+    <td><pre>literate-git-tree-branch-prefix := literate-git-branch-prefix + 'tree-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>9</td>
+    <td><pre>literate-git-tree-branch := literate-git-tree-branch-prefix + `echo "${tree_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>7</td>
+    <td>10</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>8</td>
+    <td>11</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>9</td>
+    <td>12</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>53</td>
+    <td>56</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${current_branch}" ; \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>54</td>
+    <td>57</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>55</td>
+    <td>58</td>
+    <td><pre>        done</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>59</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>60</td>
+    <td><pre>dendrify:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>61</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>62</td>
+    <td><pre>    echo "{{ pyenv-version-name }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>63</td>
+    <td><pre>    echo "${base_branch}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>64</td>
+    <td><pre>    echo "{{ linear-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>65</td>
+    <td><pre>    echo "{{ literate-git-tree-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>66</td>
+    <td><pre>    if [[ -n "${base_branch}" && -n "{{ linear-branch }}" && -n "{{ literate-git-tree-branch }}" ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>67</td>
+    <td><pre>        if git --git-dir "{{ repository-local-path }}/.git" show-branch "{{ literate-git-tree-branch }}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>68</td>
+    <td><pre>            git --git-dir "{{ repository-local-path }}/.git" branch --delete --force "{{ literate-git-tree-branch }}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>69</td>
+    <td><pre>        fi && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>70</td>
+    <td><pre>        cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>71</td>
+    <td><pre>            python_version_original="$(pyenv local)" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>72</td>
+    <td><pre>            pyenv local "{{ pyenv-version-name }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>73</td>
+    <td><pre>            git dendrify dendrify "{{ literate-git-tree-branch }}" "${base_branch}" "{{ linear-branch }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>74</td>
+    <td><pre>            if [[ -n "${python_version_original}" ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>75</td>
+    <td><pre>                pyenv local "${python_version_original}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>76</td>
+    <td><pre>            else \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>77</td>
+    <td><pre>                pyenv local --unset ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>78</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>79</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>80</td>
+    <td><pre></pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+<div class="children">
+<div class="literate-git-node" data-commit-sha1="21d7bf010c8dff7fcaaead8d47300a9e89035d17">
+
+<h2><span class="sec-num">7.1</span>
+    Add .python-version</h2>
+
+<div class="message-body"><h1>Add <code>.python-version</code> file</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/21d7bf010c8dff7fcaaead8d47300a9e89035d17"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/21d7bf010c8dff7fcaaead8d47300a9e89035d17"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.python-version</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>3.9.1</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="dcbaac671a99bc97d8e73232866f7dc406d13cda">
+
+<h2><span class="sec-num">7.2</span>
+    Add linear-branch</h2>
+
+<div class="message-body"><h1>Add <code>linear-branch</code> variable in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/dcbaac671a99bc97d8e73232866f7dc406d13cda"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/dcbaac671a99bc97d8e73232866f7dc406d13cda"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>4</td>
+    <td><pre>literate-git-branch-prefix := 'literate-git-'</pre></td></tr>
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>5</td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>6</td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre>linear-branch := literate-git-linear-branch</pre></td></tr>
+  <tr class="diff-unch">
+    <td>7</td>
+    <td>8</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>8</td>
+    <td>9</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>9</td>
+    <td>10</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="e3f759394f5fb06e41aa0ed6381b4921f338a0dc">
+
+<h2><span class="sec-num">7.3</span>
+    Add <code>tree_branch_postfix</code></h2>
+
+<div class="message-body"><h1>Add <code>tree_branch_postfix</code> environment variable</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/e3f759394f5fb06e41aa0ed6381b4921f338a0dc"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/e3f759394f5fb06e41aa0ed6381b4921f338a0dc"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre>commit_message_path=./commit-message</pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>base_branch=start</pre></td></tr>
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>4</td>
+    <td><pre>linear_branch_postfix=linear_branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>tree_branch_postfix=tree_branch</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="95c12d03057e44c8727c425b7212197b5a0f2190">
+
+<h2><span class="sec-num">7.4</span>
+    Add <code>literate-git-tree-branch</code></h2>
+
+<div class="message-body"><h1>Add <code>literate-git-tree-branch</code> variable in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/95c12d03057e44c8727c425b7212197b5a0f2190"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/95c12d03057e44c8727c425b7212197b5a0f2190"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>5</td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>6</td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>7</td>
+    <td>7</td>
+    <td><pre>linear-branch := literate-git-linear-branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>8</td>
+    <td><pre>literate-git-tree-branch-prefix := literate-git-branch-prefix + 'tree-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>9</td>
+    <td><pre>literate-git-tree-branch := literate-git-tree-branch-prefix + `echo "${tree_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>8</td>
+    <td>10</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>9</td>
+    <td>11</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>10</td>
+    <td>12</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="1d9bbd53fca421e2fc8ce6bdaeceb9e295366dd2">
+
+<h2><span class="sec-num">7.5</span>
+    Add dendrify recipe</h2>
+
+<div class="message-body"><h1>Add <code>dendrify</code> recipe in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/1d9bbd53fca421e2fc8ce6bdaeceb9e295366dd2"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/1d9bbd53fca421e2fc8ce6bdaeceb9e295366dd2"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>56</td>
+    <td>56</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${current_branch}" ; \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>57</td>
+    <td>57</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>58</td>
+    <td>58</td>
+    <td><pre>        done</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>59</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>60</td>
+    <td><pre>dendrify:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>61</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>62</td>
+    <td><pre>    echo "{{ pyenv-version-name }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>63</td>
+    <td><pre>    echo "${base_branch}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>64</td>
+    <td><pre>    echo "{{ linear-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>65</td>
+    <td><pre>    echo "{{ literate-git-tree-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>66</td>
+    <td><pre>    if [[ -n "${base_branch}" && -n "{{ linear-branch }}" && -n "{{ literate-git-tree-branch }}" ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>67</td>
+    <td><pre>        if git --git-dir "{{ repository-local-path }}/.git" show-branch "{{ literate-git-tree-branch }}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>68</td>
+    <td><pre>            git --git-dir "{{ repository-local-path }}/.git" branch --delete --force "{{ literate-git-tree-branch }}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>69</td>
+    <td><pre>        fi && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>70</td>
+    <td><pre>        cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>71</td>
+    <td><pre>            python_version_original="$(pyenv local)" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>72</td>
+    <td><pre>            pyenv local "{{ pyenv-version-name }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>73</td>
+    <td><pre>            git dendrify dendrify "{{ literate-git-tree-branch }}" "${base_branch}" "{{ linear-branch }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>74</td>
+    <td><pre>            if [[ -n "${python_version_original}" ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>75</td>
+    <td><pre>                pyenv local "${python_version_original}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>76</td>
+    <td><pre>            else \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>77</td>
+    <td><pre>                pyenv local --unset ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>78</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>79</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>80</td>
+    <td><pre></pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="b91398a821a6eebeccae87a719c6a8ac4a2fdbc3">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">8</span>
+    Add literate-render</h2>
+
+<div class="message-body"><h1>Add <code>literate-render</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/b91398a821a6eebeccae87a719c6a8ac4a2fdbc3"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/b91398a821a6eebeccae87a719c6a8ac4a2fdbc3"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<h2 class="nav expand">+</h2>
+<h2 class="nav collapse">-</h2>
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>78</td>
+    <td>78</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>79</td>
+    <td>79</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-unch">
+    <td>80</td>
+    <td>80</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>81</td>
+    <td><pre>cache:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>82</td>
+    <td><pre>    if [[ ! -f ./cache/literate-git.css ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>83</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>84</td>
+    <td><pre>        wget --no-check-certificate https://raw.githubusercontent.com/bennorth/literate-git/develop/literategit/literate-git.css ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>85</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>86</td>
+    <td><pre>    if [[ ! -f ./cache/literate-git.js ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>87</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>88</td>
+    <td><pre>        wget --no-check-certificate https://raw.githubusercontent.com/bennorth/literate-git/develop/literategit/literate-git.js ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>89</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>90</td>
+    <td><pre>    if [[ ! -f ./cache/github-markdown.css ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>91</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>92</td>
+    <td><pre>        wget --no-check-certificate https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>93</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>94</td>
+    <td><pre>    if [[ ! -f ./cache/jquery-3.0.0.min.js ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>95</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>96</td>
+    <td><pre>        wget --no-check-certificate https://code.jquery.com/jquery-3.0.0.min.js ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>97</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>98</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>99</td>
+    <td><pre>literate-render: cache</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>100</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>101</td>
+    <td><pre>    echo "{{ literate-git-site-packages }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>102</td>
+    <td><pre>    echo "${base_branch}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>103</td>
+    <td><pre>    echo "{{ tree-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>104</td>
+    <td><pre>    echo "${title}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>105</td>
+    <td><pre>    echo "${output_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>106</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>107</td>
+    <td><pre>        mkdir -p "${output_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>108</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>109</td>
+    <td><pre>        ln -f -s "{{ literate-git-site-packages }}/literategit/example_create_url.py" . && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>110</td>
+    <td><pre>        git literate-render "${title}" "${base_branch}" "{{ tree-branch }}" example_create_url.CreateUrl > "${output_path}/index.html" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>111</td>
+    <td><pre>        unlink ./example_create_url.py</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>112</td>
+    <td><pre>    cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>113</td>
+    <td><pre></pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>output/.gitkeep</h4>
+  
+  </div>
+  </div>
+
+
+<div class="children">
+<div class="literate-git-node" data-commit-sha1="ade91ba0ad772422f2a032c45726f9a85c258bd9">
+
+<h2><span class="sec-num">8.1</span>
+    Add output/.gitkeep file</h2>
+
+<div class="message-body"><h1>Add <code>output/.gitkeep</code> file</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/ade91ba0ad772422f2a032c45726f9a85c258bd9"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/ade91ba0ad772422f2a032c45726f9a85c258bd9"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>output/.gitkeep</h4>
+  
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="dcc675024d64cfb8af37af9af5754dd7aaf67c35">
+
+<h2><span class="sec-num">8.2</span>
+    add cache/.gitkeep</h2>
+
+<div class="message-body"><h1>add cache/.gitkeep</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/dcc675024d64cfb8af37af9af5754dd7aaf67c35"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/dcc675024d64cfb8af37af9af5754dd7aaf67c35"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.gitignore</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-del">
+    <td>1</td>
+    <td></td>
+    <td><pre>/cache/*</pre></td></tr>
+  <tr class="diff-del">
+    <td>2</td>
+    <td></td>
+    <td><pre>!/cache/.gitkeep</pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>1</td>
+    <td><pre>literate-git-command.code-workspace</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="139836ad2d1b773015c7def3931d32ec21e591c0">
+
+<h2><span class="sec-num">8.3</span>
+    add cache /.gitignore</h2>
+
+<div class="message-body"><h1>add cache /.gitignore</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/139836ad2d1b773015c7def3931d32ec21e591c0"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/139836ad2d1b773015c7def3931d32ec21e591c0"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.gitignore</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>/cache/*</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre>!/cache/.gitkeep</pre></td></tr>
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>3</td>
+    <td><pre>literate-git-command.code-workspace</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="148cbf7faaa2b4b65200aa5c313f21af52f6b2ab">
+
+<h2><span class="sec-num">8.4</span>
+    add cache</h2>
+
+<div class="message-body"><h1>add cache</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/148cbf7faaa2b4b65200aa5c313f21af52f6b2ab"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/148cbf7faaa2b4b65200aa5c313f21af52f6b2ab"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="79537b3231e9740e9ed36b5604d43e2f50008124">
+
+<h2><span class="sec-num">8.5</span>
+    Add literate-render recipe</h2>
+
+<div class="message-body"><h1>Add <code>literate-render</code> recipe in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/79537b3231e9740e9ed36b5604d43e2f50008124"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/79537b3231e9740e9ed36b5604d43e2f50008124"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>78</td>
+    <td>78</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>79</td>
+    <td>79</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-unch">
+    <td>80</td>
+    <td>80</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>81</td>
+    <td><pre>cache:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>82</td>
+    <td><pre>    if [[ ! -f ./cache/literate-git.css ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>83</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>84</td>
+    <td><pre>        wget --no-check-certificate https://raw.githubusercontent.com/bennorth/literate-git/develop/literategit/literate-git.css ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>85</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>86</td>
+    <td><pre>    if [[ ! -f ./cache/literate-git.js ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>87</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>88</td>
+    <td><pre>        wget --no-check-certificate https://raw.githubusercontent.com/bennorth/literate-git/develop/literategit/literate-git.js ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>89</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>90</td>
+    <td><pre>    if [[ ! -f ./cache/github-markdown.css ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>91</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>92</td>
+    <td><pre>        wget --no-check-certificate https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>93</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>94</td>
+    <td><pre>    if [[ ! -f ./cache/jquery-3.0.0.min.js ]]; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>95</td>
+    <td><pre>        cd ./cache ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>96</td>
+    <td><pre>        wget --no-check-certificate https://code.jquery.com/jquery-3.0.0.min.js ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>97</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>98</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>99</td>
+    <td><pre>literate-render: cache</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>100</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>101</td>
+    <td><pre>    echo "{{ literate-git-site-packages }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>102</td>
+    <td><pre>    echo "${base_branch}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>103</td>
+    <td><pre>    echo "{{ tree-branch }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>104</td>
+    <td><pre>    echo "${title}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>105</td>
+    <td><pre>    echo "${output_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>106</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>107</td>
+    <td><pre>        mkdir -p "${output_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>108</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>109</td>
+    <td><pre>        ln -f -s "{{ literate-git-site-packages }}/literategit/example_create_url.py" . && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>110</td>
+    <td><pre>        git literate-render "${title}" "${base_branch}" "{{ tree-branch }}" example_create_url.CreateUrl > "${output_path}/index.html" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>111</td>
+    <td><pre>        unlink ./example_create_url.py</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>112</td>
+    <td><pre>    cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>113</td>
+    <td><pre></pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="c4b9c269e888b397e32ce134b1cabc1f61ead68b">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">9</span>
+    Add file-server</h2>
+
+<div class="message-body"><h1>Add <code>file-server</code> recipe in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/c4b9c269e888b397e32ce134b1cabc1f61ead68b"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/c4b9c269e888b397e32ce134b1cabc1f61ead68b"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>#!/usr/bin/env just --justfile</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-del">
+    <td>4</td>
+    <td></td>
+    <td><pre>literate-git-branch-prefix := 'literate-git-'</pre></td></tr>
+  <tr class="diff-del">
+    <td>5</td>
+    <td></td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-del">
+    <td>6</td>
+    <td></td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-del">
+    <td>7</td>
+    <td></td>
+    <td><pre>linear-branch := literate-git-linear-branch</pre></td></tr>
+  <tr class="diff-del">
+    <td>8</td>
+    <td></td>
+    <td><pre>literate-git-tree-branch-prefix := literate-git-branch-prefix + 'tree-'</pre></td></tr>
+  <tr class="diff-del">
+    <td>9</td>
+    <td></td>
+    <td><pre>literate-git-tree-branch := literate-git-tree-branch-prefix + `echo "${tree_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>10</td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>11</td>
+    <td>5</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>12</td>
+    <td>6</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>111</td>
+    <td>105</td>
+    <td><pre>        unlink ./example_create_url.py</pre></td></tr>
+  <tr class="diff-unch">
+    <td>112</td>
+    <td>106</td>
+    <td><pre>    cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>113</td>
+    <td>107</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>108</td>
+    <td><pre>file-server:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>109</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>110</td>
+    <td><pre>    echo "${output_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>111</td>
+    <td><pre>    caddy file-server --root "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="596fae2252ed744269338c94453b583e24469c40">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">10</span>
+    Add github-pages</h2>
+
+<div class="message-body"><h1>Add <code>github-pages</code> recipe in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/596fae2252ed744269338c94453b583e24469c40"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/596fae2252ed744269338c94453b583e24469c40"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>109</td>
+    <td>109</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>110</td>
+    <td>110</td>
+    <td><pre>    echo "${output_path}"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>111</td>
+    <td>111</td>
+    <td><pre>    caddy file-server --root "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>112</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>113</td>
+    <td><pre>github-pages:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>114</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>115</td>
+    <td><pre>    echo "${output_path}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>116</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout master</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>117</td>
+    <td><pre>    if git --git-dir "{{ repository-local-path }}/.git" show-branch gh-pages ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>118</td>
+    <td><pre>        git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" branch --delete --force gh-pages ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>119</td>
+    <td><pre>    fi</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>120</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout --orphan gh-pages</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>121</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" rm -rf .</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>122</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>123</td>
+    <td><pre>        cd "${output_path}" && \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>124</td>
+    <td><pre>        find . -type f -exec mv {} ../ \; -exec git add ../{} \;</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>125</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" commit --message "GitHub Pages"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>126</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" push --force --set-upstream origin gh-pages</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>127</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout master</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>128</td>
+    <td><pre></pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="d5a0ab1877c253c60cde7ba3d7b49dbafa4d992f">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">11</span>
+    Add frequently recipes</h2>
+
+<div class="message-body"><h1>add frequently recipes in <code>Justfile</code></h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/d5a0ab1877c253c60cde7ba3d7b49dbafa4d992f"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/d5a0ab1877c253c60cde7ba3d7b49dbafa4d992f"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>105</td>
+    <td>105</td>
+    <td><pre>        unlink ./example_create_url.py</pre></td></tr>
+  <tr class="diff-unch">
+    <td>106</td>
+    <td>106</td>
+    <td><pre>    cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>107</td>
+    <td>107</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>108</td>
+    <td><pre>all: regenerate-linear-branch dendrify literate-render</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>109</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>108</td>
+    <td>110</td>
+    <td><pre>file-server:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>109</td>
+    <td>111</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>110</td>
+    <td>112</td>
+    <td><pre>    echo "${output_path}"</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>126</td>
+    <td>128</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" push --force --set-upstream origin gh-pages</pre></td></tr>
+  <tr class="diff-unch">
+    <td>127</td>
+    <td>129</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout master</pre></td></tr>
+  <tr class="diff-unch">
+    <td>128</td>
+    <td>130</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>131</td>
+    <td><pre>push-tags:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>132</td>
+    <td><pre>    git push --tags</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>132</td>
+    <td><pre>    git push --tags</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div><div class="literate-git-node" data-commit-sha1="fd2c8bab4dee7119b328c2281dafba78f40fd23b">
+
+  <h2 class="nav prev">&lt;</h2>
+  <h2 class="nav next">&gt;</h2>
+
+<h2><span class="sec-num">12</span>
+    add all files in master</h2>
+
+<div class="message-body"><h1>add all files in master</h1>
+</div>
+
+<p class="links">
+  <a target="LiterateGitResult"
+     href="http://example.com/results/fd2c8bab4dee7119b328c2281dafba78f40fd23b"><span>RESULT</span></a>
+  <a target="LiterateGitSource"
+     href="http://example.com/source/fd2c8bab4dee7119b328c2281dafba78f40fd23b"><span>SOURCE</span></a>
+</p>
+
+<div class="diff-or-children">
+
+<div class="diff">  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.env</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>base_branch=start</pre></td></tr>
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>4</td>
+    <td><pre>linear_branch_postfix=linear_branch</pre></td></tr>
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>5</td>
+    <td><pre>tree_branch_postfix=tree_branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>6</td>
+    <td><pre>title="literate-git-command for literate-git-command"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre>output_path=./output</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre>output_path=./output</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.gitignore</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>/__pycache__/</pre></td></tr>
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>2</td>
+    <td><pre>/cache/*</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>3</td>
+    <td><pre>!/cache/.gitkeep</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>/output/*</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>!/output/.gitkeep</pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>6</td>
+    <td><pre>literate-git-command.code-workspace</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre></pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>.markdownlint.json</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre><span class="p">{</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre>    <span class="nt">&quot;MD033&quot;</span><span class="p">:</span> <span class="p">{</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre>        <span class="nt">&quot;allowed_elements&quot;</span><span class="p">:</span> <span class="p">[</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>            <span class="s2">&quot;s&quot;</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>        <span class="p">]</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>6</td>
+    <td><pre>    <span class="p">},</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre>    <span class="nt">&quot;MD041&quot;</span><span class="p">:</span> <span class="kc">false</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>8</td>
+    <td><pre><span class="p">}</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>8</td>
+    <td><pre><span class="p">}</span></pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>Justfile</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>1</td>
+    <td>1</td>
+    <td><pre>#!/usr/bin/env just --justfile</pre></td></tr>
+  <tr class="diff-unch">
+    <td>2</td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>3</td>
+    <td>3</td>
+    <td><pre>repository-local-path := `while r=$(ghq list --full-path "${repository_remote}") && [[ -z "${r}" ]] ; do ghq get --update "${repository_remote}" >/dev/null; done; echo "${r}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre>literate-git-branch-prefix := 'literate-git-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>literate-git-linear-branch-prefix := literate-git-branch-prefix + 'linear-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>6</td>
+    <td><pre>literate-git-linear-branch := literate-git-linear-branch-prefix + `echo "${linear_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>7</td>
+    <td><pre>linear-branch := literate-git-linear-branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>8</td>
+    <td><pre>literate-git-tree-branch-prefix := literate-git-branch-prefix + 'tree-'</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>9</td>
+    <td><pre>literate-git-tree-branch := literate-git-tree-branch-prefix + `echo "${tree_branch_postfix}"`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>10</td>
+    <td><pre>tree-branch := literate-git-tree-branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>11</td>
+    <td><pre>pyenv-version-name := `pyenv version-name`</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>12</td>
+    <td><pre>literate-git-site-packages := `/usr/local/opt/literate-git/libexec/bin/python  -c 'import site; print(site.getsitepackages()[0])'`</pre></td></tr>
+  <tr class="diff-unch">
+    <td>4</td>
+    <td>13</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>5</td>
+    <td>14</td>
+    <td><pre>repository-local-path:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>6</td>
+    <td>15</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>12</td>
+    <td>21</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>13</td>
+    <td>22</td>
+    <td><pre>        cd "${commit_message_path}" && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>14</td>
+    <td>23</td>
+    <td><pre>        pwd && \</pre></td></tr>
+  <tr class="diff-del">
+    <td>15</td>
+    <td></td>
+    <td><pre>        find . -type f | sort --numeric-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>24</td>
+    <td><pre>        find . -type f | sort --version-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>16</td>
+    <td>25</td>
+    <td><pre>            echo "${line}" | pastel paint --bold red --no-newline && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>17</td>
+    <td>26</td>
+    <td><pre>            branch_name="$(echo "${line}" | sed 's/^\.[/][^/]*[/]\(.*\)\.[^.]*$/\1/')" && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>18</td>
+    <td>27</td>
+    <td><pre>            echo "${branch_name}" && \</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>34</td>
+    <td>43</td>
+    <td><pre>    cd "{{ repository-local-path }}" && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>35</td>
+    <td>44</td>
+    <td><pre>        cd "${commit_message_path}" && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>36</td>
+    <td>45</td>
+    <td><pre>        pwd && \</pre></td></tr>
+  <tr class="diff-del">
+    <td>37</td>
+    <td></td>
+    <td><pre>        find . -type f | sort --numeric-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>46</td>
+    <td><pre>        find . -type f | sort --version-sort | while read line ; do \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>38</td>
+    <td>47</td>
+    <td><pre>            echo "${line}" | pastel paint --bold red --no-newline && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>39</td>
+    <td>48</td>
+    <td><pre>            branch_name="$(echo "${line}" | sed 's/^\.[/][^/]*[/]\(.*\)\.[^.]*$/\1/')" && \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>40</td>
+    <td>49</td>
+    <td><pre>            echo "${branch_name}" && \</pre></td></tr>
+  </table>
+  <p class="inter-hunk">&vellip;</p>
+  <table class="diff">
+  <tr class="diff-unch">
+    <td>51</td>
+    <td>60</td>
+    <td><pre>            fi \</pre></td></tr>
+  <tr class="diff-unch">
+    <td>52</td>
+    <td>61</td>
+    <td><pre>        done</pre></td></tr>
+  <tr class="diff-unch">
+    <td>53</td>
+    <td>62</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>63</td>
+    <td><pre>checkout-branch:</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>64</td>
+    <td><pre>    echo "${repository_remote}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>65</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>66</td>
+    <td><pre>    echo "${base_commit}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>67</td>
+    <td><pre>    echo "${linear_commit}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>68</td>
+    <td><pre>    echo "${tree_commit}"</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>69</td>
+    <td><pre>    if [[ -n "${base_commit}" ]] ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>70</td>
+    <td><pre>        if git --git-dir "{{ repository-local-path }}/.git" show-branch "${base_commit}" ; then : ; else \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>71</td>
+    <td><pre>            if git --git-dir "{{ repository-local-path }}/.git" show-branch "origin/${base_commit}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>72</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${base_commit}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>73</td>
+    <td><pre>            fi ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>74</td>
+    <td><pre>        fi ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>75</td>
+    <td><pre>    fi ;</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>76</td>
+    <td><pre>    if [[ -n "${linear_commit}" ]] ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>77</td>
+    <td><pre>        if git --git-dir "{{ repository-local-path }}/.git" show-branch "${linear_commit}" ; then : ; else \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>78</td>
+    <td><pre>            if git --git-dir "{{ repository-local-path }}/.git" show-branch "origin/${linear_commit}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>79</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${linear_commit}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>80</td>
+    <td><pre>            fi ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>81</td>
+    <td><pre>        fi ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>82</td>
+    <td><pre>    fi ;</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>83</td>
+    <td><pre>    if [[ -n "${tree_commit}" ]] ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>84</td>
+    <td><pre>        if git --git-dir "{{ repository-local-path }}/.git" show-branch "${tree_commit}" ; then : ; else \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>85</td>
+    <td><pre>            if git --git-dir "{{ repository-local-path }}/.git" show-branch "origin/${tree_commit}" ; then \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>86</td>
+    <td><pre>                git --git-dir "{{ repository-local-path }}/.git" --work-tree "{{ repository-local-path }}" checkout "${tree_commit}" ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>87</td>
+    <td><pre>            fi ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>88</td>
+    <td><pre>        fi ; \</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>89</td>
+    <td><pre>    fi ;</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>90</td>
+    <td><pre>    git --git-dir "{{ repository-local-path }}/.git" --no-pager branch --list</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>91</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-unch">
+    <td>54</td>
+    <td>92</td>
+    <td><pre>dendrify:</pre></td></tr>
+  <tr class="diff-unch">
+    <td>55</td>
+    <td>93</td>
+    <td><pre>    echo "{{ repository-local-path }}"</pre></td></tr>
+  <tr class="diff-unch">
+    <td>56</td>
+    <td>94</td>
+    <td><pre>    echo "{{ pyenv-version-name }}"</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.1/add.envrc.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add .envrc</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add /.envrc</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.2/add.env.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add .env file</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add .env file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.3/enable.env.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Enable .env</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Enable .env</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>4</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>5</td>
+    <td><pre>add <span class="sb">`dotenv`</span> in .envrc</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.4/add.repository_remote.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add repository_remote</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `repository_remote` environment variable in `.env` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.5/add.Justfile.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add Justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add Justfile</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/2.6/add.env.and.Justfile.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add .env and Justfile</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add .env and Justfile</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/3/add.Shebang.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add Shebang</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add Shebang</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/4.1/add.commit_message_path.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;add <span class="sb">`commit_message_path`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `commit_message_path` environment variable in `.env` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/4.2/add.commit-message.files.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add commit-message files</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `commit-message` files</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/4.3/add.commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;add commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add commit-message</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/5.1/add.show-commit-message.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add show-commit-message</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add `show-commit-message`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.1/add.base_branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;Add base_branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `base_branch` environment variable</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.2/add.linear_branch_postfix.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`linear_branch_postfix`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `linear_branch_postfix` environment variable</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.3/add.literate-git-linear-branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`literate-git-linear-branch`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `literate-git-linear-branch` variable in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.4/add.regenerate-linear-branch.recipe.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`regenerate-linear-branch`</span> recipe</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `regenerate-linear-branch` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/6.5/add.regenerate-linear-branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;Add <span class="sb">`regenerate-linear-branch`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `regenerate-linear-branch`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7.1/add.python-version.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;Add .python-version</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `.python-version` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7.2/add.linear-branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add linear-branch</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `linear-branch` variable in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7.3/add.tree_branch_postfix.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`tree_branch_postfix`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `tree_branch_postfix` environment variable</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7.4/add.literate-git-tree-branch.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add <span class="sb">`literate-git-tree-branch`</span></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `literate-git-tree-branch` variable in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7.5/add.dendrify.recipe.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add dendrify recipe</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `dendrify` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/7.6/add.dendrify.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;Add dendrify</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add.`dendrify` recipe</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.1/add.output.gitkeep.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;s&gt;Add output/.gitkeep file</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `output/.gitkeep` file</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.2/add.cache.gitkeep.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add cache/.gitkeep</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache/.gitkeep</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.3/add.cache.gitignore.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add cache /.gitignore</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache /.gitignore</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.4/add.cache.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>add cache</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> add cache</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.5/add.literate-render.recipe.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>Add literate-render recipe</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `literate-render` recipe in `Justfile`</pre></td></tr>
+  </table>
+  </div>
+  
+  <div class="patch">
+  <!-- TODO: Handle 'rename' diffs -->
+  <h4>commit-message/8.6/add.literate-render.md</h4>
+  
+  
+  <table class="diff">
+  <tr class="diff-add">
+    <td></td>
+    <td>1</td>
+    <td><pre>&lt;/s&gt;Add literate-render</pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>2</td>
+    <td><pre></pre></td></tr>
+  <tr class="diff-add">
+    <td></td>
+    <td>3</td>
+    <td><pre><span class="gh">#</span> Add `literate-render`</pre></td></tr>
+  </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+
+<div class="project-link-footer">
+  <p>This is a
+    <a href="https://github.com/bennorth/literate-git/">&lsquo;literate git&rsquo;</a>
+    interactive document.</p></div>
+    <div class="nav-tooltip" id="tooltip-next"><div class="tooltip-arrow" data-popper-arrow></div><p>Use this button to advance to the next section in the history.</p><p class="dismiss noselect"><span>DISMISS</span></p></div>
+    <div class="nav-tooltip" id="tooltip-previous"><div class="tooltip-arrow" data-popper-arrow></div><p>Use this button to go back to the previous section in the history.</p><p class="dismiss noselect"><span>DISMISS</span></p></div>
+    <div class="nav-tooltip" id="tooltip-expand"><div class="tooltip-arrow" data-popper-arrow></div><p>Use this button to expand the section and see more detail about the steps.</p><p class="dismiss noselect"><span>DISMISS</span></p></div>
+    <div class="nav-tooltip" id="tooltip-collapse"><div class="tooltip-arrow" data-popper-arrow></div><p>Use this button to collapse the details of this section and see just a summary.</p><p class="dismiss noselect"><span>DISMISS</span></p></div>
+  </div>
+  </body>
+</html>

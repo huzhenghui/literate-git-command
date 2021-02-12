@@ -72,3 +72,36 @@ dendrify:
             fi \
     fi
 
+cache:
+    if [[ ! -f ./cache/literate-git.css ]]; then \
+        cd ./cache ; \
+        wget --no-check-certificate https://raw.githubusercontent.com/bennorth/literate-git/develop/literategit/literate-git.css ; \
+    fi
+    if [[ ! -f ./cache/literate-git.js ]]; then \
+        cd ./cache ; \
+        wget --no-check-certificate https://raw.githubusercontent.com/bennorth/literate-git/develop/literategit/literate-git.js ; \
+    fi
+    if [[ ! -f ./cache/github-markdown.css ]]; then \
+        cd ./cache ; \
+        wget --no-check-certificate https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css ; \
+    fi
+    if [[ ! -f ./cache/jquery-3.0.0.min.js ]]; then \
+        cd ./cache ; \
+        wget --no-check-certificate https://code.jquery.com/jquery-3.0.0.min.js ; \
+    fi
+
+literate-render: cache
+    echo "{{ repository-local-path }}"
+    echo "{{ literate-git-site-packages }}"
+    echo "${base_branch}"
+    echo "{{ tree-branch }}"
+    echo "${title}"
+    echo "${output_path}"
+    cd "{{ repository-local-path }}" && \
+        mkdir -p "${output_path}"
+    cd "{{ repository-local-path }}" && \
+        ln -f -s "{{ literate-git-site-packages }}/literategit/example_create_url.py" . && \
+        git literate-render "${title}" "${base_branch}" "{{ tree-branch }}" example_create_url.CreateUrl > "${output_path}/index.html" && \
+        unlink ./example_create_url.py
+    cp ./cache/* "$(cd "{{ repository-local-path }}"; cd "${output_path}"; pwd)"
+
